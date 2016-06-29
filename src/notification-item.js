@@ -149,7 +149,7 @@ var NotificationItem = React.createClass({
 		var transitionEvent = whichTransitionEvent();
     var notification = this.props.notification;
 
-    var element = React.findDOMNode(this);
+    var element = this.getDOMNode();
 
     this._height = element.offsetHeight;
 
