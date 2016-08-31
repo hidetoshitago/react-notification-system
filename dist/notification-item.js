@@ -267,6 +267,10 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
       dismiss = React.createElement("span", {className: "notification-dismiss", style: this._styles.dismiss}, "×");
     }
 
+    if (notification.children) {
+      children = notification.children;
+    }
+
     if (notification.action) {
       actionButton = (
         React.createElement("div", {className: "notification-action-wrapper", style: this._styles.actionWrapper}, 
@@ -280,6 +284,7 @@ var NotificationItem = React.createClass({displayName: "NotificationItem",
         title, 
         message, 
         dismiss, 
+        children, 
         actionButton
       )
     );

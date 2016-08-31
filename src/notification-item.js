@@ -267,6 +267,10 @@ var NotificationItem = React.createClass({
       dismiss = <span className="notification-dismiss" style={this._styles.dismiss}>&times;</span>;
     }
 
+    if (notification.children) {
+      children = notification.children;
+    }
+
     if (notification.action) {
       actionButton = (
         <div className="notification-action-wrapper" style={this._styles.actionWrapper}>
@@ -280,6 +284,7 @@ var NotificationItem = React.createClass({
         {title}
         {message}
         {dismiss}
+        {children}
         {actionButton}
       </div>
     );
